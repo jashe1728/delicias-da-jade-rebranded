@@ -4,6 +4,7 @@ window.JADE_PRODUCTS=[["Chocolat Tudo", "0c144fb5c620", "Clássicos", "Massa chi
 
 
 
+
 'use strict';
 (() => {
 const $ = s => document.querySelector(s);
@@ -115,4 +116,39 @@ $('#chat-form').addEventListener('submit',e=>{e.preventDefault();ask($('#chat-in
 $$('[data-question]').forEach(b=>b.addEventListener('click',()=>ask(b.dataset.question)));
 // Never allow form fallback navigation in this review prototype.
 $$('form').forEach(f=>f.addEventListener('submit',e=>e.preventDefault()));
+})();
+
+// Progressive enhancement only: CSS and the underlying DOM always stay visible.
+// If observation or animation fails, there is no pending/hidden state to clear.
+(() => {
+ const preference=matchMedia('(prefers-reduced-motion: reduce)');
+ if(preference.matches || typeof IntersectionObserver!=='function' || !Element.prototype.animate)return;
+ const running=new Set();
+ let observer;
+ const stop=()=>{if(observer)observer.disconnect();for(const animation of running)animation.cancel();running.clear();};
+ try{
+  observer=new IntersectionObserver(entries=>{
+   for(const entry of entries){
+    if(!entry.isIntersecting)continue;
+    const section=entry.target;observer.unobserve(section);
+    if(preference.matches)continue;
+    section.dataset.reveal='complete';
+    // No entry animation for initial viewport content, forms, links or buttons.
+    const nodes=section.matches('.product-card') ? section.querySelectorAll('.product-image img, .product-meta, :scope > p') : section.querySelectorAll(':scope > .eyebrow, :scope > h2, :scope > p, :scope > img');
+    [...nodes].forEach((node,index)=>{
+     try{
+      const animation=node.animate([{opacity:.4,transform:'translateY(24px)'},{opacity:1,transform:'translateY(0)'}],{duration:750,delay:Math.min(index,2)*90,easing:'cubic-bezier(.2,.65,.3,1)',fill:'none'});
+      running.add(animation);
+      animation.finished.catch(()=>{}).finally(()=>running.delete(animation));
+     }catch{ /* The original visible element needs no recovery. */ }
+    });
+   }
+  },{threshold:.08,rootMargin:'0px 0px -24px 0px'});
+  document.querySelectorAll('.product-card,.section-heading > div,.story-copy,.logo-panel,.steps > div,.steps li > div,.custom-section > div,.review-editorial,.location-info,.location-note,.faq > div:first-child').forEach(section=>{
+   if(section.getBoundingClientRect().top>=innerHeight)observer.observe(section);
+  });
+  preference.addEventListener('change',()=>{if(preference.matches)stop();});
+  document.addEventListener('focusin',()=>{for(const animation of running)animation.cancel();running.clear();});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){for(const animation of running)animation.cancel();running.clear();}});
+ }catch{stop();}
 })();
