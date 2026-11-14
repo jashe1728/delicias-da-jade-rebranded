@@ -155,9 +155,11 @@ details{border-bottom:1px solid #cdb2a6;padding:19px 0}
 details:first-child{padding-top:0}
 summary{cursor:pointer;font-size:14px;padding-right:20px}
 details p{font-size:13px;color:var(--muted);margin-top:16px}
-.chat-launch{position:static;display:flex;align-items:center;justify-content:center;gap:10px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--wine);padding:10px 6%;margin:0 auto;min-height:44px;width:100%;font-size:11px}
-.chat-launch svg{width:21px}
-.chat-launch small{font-size:8px;color:var(--muted);border-left:1px solid var(--line);padding-left:10px;letter-spacing:.07em}
+.chat-launch{position:fixed;z-index:30;right:max(16px,env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));display:grid;place-items:center;width:56px;height:56px;min-height:44px;padding:0;margin:0;border:1px solid #a36d67;border-radius:50%;background:var(--wine);color:var(--cream);box-shadow:0 4px 16px #30161528;transition:background-color .18s,box-shadow .18s}
+.chat-launch svg{width:30px;height:30px;pointer-events:none}
+.chat-launch:hover{background:#623333;box-shadow:0 6px 20px #30161538}
+.chat-launch:focus-visible{outline:3px solid var(--wine);outline-offset:4px;box-shadow:0 0 0 4px var(--cream)}
+body:has(dialog[open]) .chat-launch{visibility:hidden;pointer-events:none}
 dialog{border:1px solid var(--line);padding:0;background:var(--paper);color:var(--dark);box-shadow:0 20px 100px #30161530;max-height:90dvh;overscroll-behavior:contain}
 dialog::backdrop{background:#2e17185c;backdrop-filter:blur(3px)}
 .chat-dialog{width:390px;margin:auto 24px 88px auto;max-width:calc(100% - 32px)}
@@ -291,8 +293,7 @@ footer{padding:44px 7% 100px}
 .place-art{position:static;padding:15px 12px 30px}
 .location-info h2{font-size:33px}
 .faq h2{font-size:34px}
-.chat-launch{right:16px;bottom:16px;padding:12px 15px}
-.chat-launch span{font-size:11px}
+.chat-launch{width:48px;height:48px;right:calc(10px + env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));padding:0}
 .chat-dialog{margin:auto 16px 78px;max-height:calc(100dvh - 100px);width:calc(100% - 32px)}
 .chat-head{padding:18px}
 .chat-head h2{font-size:25px}
@@ -427,5 +428,22 @@ footer{padding:44px 7% 100px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *,*:before,*:after{transition:none!important;animation:none!important}
+}
+
+/* Keep a clear right-hand lane through every scroll depth, including the footer.
+   This is deliberate space for the fixed launcher, not a scroll-hide heuristic. */
+:root{--chat-lane:calc(88px + env(safe-area-inset-right))}
+.hero,.section,.page-intro{padding-right:max(7%,var(--chat-lane))}
+.values-strip{margin-right:max(7%,var(--chat-lane))}
+footer{padding-right:max(7%,var(--chat-lane));padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+.chat-dialog{margin:auto max(16px,env(safe-area-inset-right)) calc(20px + env(safe-area-inset-bottom)) auto;max-height:calc(100dvh - 40px - env(safe-area-inset-bottom));overflow-y:auto}
+.chat-suggestions button{min-height:44px}
+@media(max-width:760px){
+ :root{--chat-lane:calc(70px + env(safe-area-inset-right))}
+ .rating-row{gap:5px;flex-wrap:wrap}
+ .rating-row span{width:40px;height:44px}
+ .footer-bottom nav{flex-wrap:wrap}
+ .hero-signature{flex-wrap:wrap}
+ .chat-dialog{margin:auto 16px calc(16px + env(safe-area-inset-bottom));max-height:calc(100dvh - 32px - env(safe-area-inset-bottom));width:calc(100% - 32px)}
 }
 

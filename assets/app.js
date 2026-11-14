@@ -5,6 +5,8 @@ window.JADE_PRODUCTS=[["Chocolat Tudo", "0c144fb5c620", "Clássicos", "Massa chi
 
 
 
+
+
 'use strict';
 (() => {
 const $ = s => document.querySelector(s);
@@ -74,8 +76,10 @@ launcher.addEventListener('click',()=>{
  closeMenu();
  chat.showModal();launcher.setAttribute('aria-expanded','true');
 });
+// Enable the launcher only after its local interaction is ready.
+launcher.hidden=false;
 $('.close-chat').addEventListener('click',()=>chat.close());
-chat.addEventListener('close',()=>{launcher.setAttribute('aria-expanded','false');launcher.focus();});
+chat.addEventListener('close',()=>{launcher.setAttribute('aria-expanded','false');launcher.focus({preventScroll:true});});
 [chat,productDialog].forEach(d=>d.addEventListener('keydown',e=>{
  if(e.key!=='Tab')return;
  const focusable=[...d.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]')].filter(el=>el.getClientRects().length);
