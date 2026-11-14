@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#794040">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Os nossos bolos — Delícias da Jade · Protótipo</title>
+<meta name="description" content="Rascunho de design das Delícias da Jade. Bolos artesanais em Almada, numa demonstração sem encomendas reais.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="assets/app.js">
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar para o conteúdo</a>
+<div class="draft-bar">PROTÓTIPO PARA REVISÃO <span>·</span> Shelton &amp; Jade <span class="draft-extra">— sem encomendas ou pagamentos reais</span>
+</div>
+<header class="site-header">
+<a href="index.html" class="brand" aria-label="Delícias da Jade — início">
+<img src="assets/jade-logo-transparent.png" width="76" height="76" alt="Logótipo Delícias da Jade, com ilustração da chef">
+<span>Delícias da Jade<small>SABOR QUE ENCANTA</small>
+</span>
+</a>
+<button class="menu-toggle icon-button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 7h16M4 12h16M4 17h16"/>
+</svg>
+</button>
+<nav id="main-nav" aria-label="Navegação principal">
+<a href="index.html" >Início</a>
+<a href="catalogo.html" aria-current="page">Os nossos bolos</a>
+<a href="avaliacoes.html" >Avaliações</a>
+<a href="localizacao.html" >Onde estamos</a>
+<a href="catalogo.html#personalizar" class="nav-cta">Imaginar o meu bolo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</nav>
+</header>
+<button class="chat-launch" aria-controls="chat-dialog" aria-expanded="false">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M20 11a8 8 0 0 1-8 8H5l-3 3V11a9 9 0 0 1 18 0Z"/>
+<path d="M7 10h8m-8 4h5"/>
+</svg>
+<span>Uma ajuda doce?</span>
+<small>DEMO</small>
+</button>
+<main id="main">
+<section class="page-intro">
+<p class="eyebrow">O CATÁLOGO · DELÍCIAS DA JADE</p>
+<h1>Um bolo.<br> <em>Tantas histórias.</em>
+</h1>
+<p>Clássicos para saborear, detalhes para celebrar.<br> Encontre a inspiração e dê-lhe o seu toque.</p>
+</section>
+<section class="section catalog-section" aria-label="Catálogo de bolos">
+<div class="filter-bar">
+<div class="filters" aria-label="Filtrar bolos">
+<button type="button" data-filter="Todos" aria-pressed="true">Todos</button>
+<button type="button" data-filter="Clássicos" aria-pressed="false">Clássicos</button>
+<button type="button" data-filter="Celebrações" aria-pressed="false">Celebrações</button>
+<button type="button" data-filter="Personalizados" aria-pressed="false">Personalizados</button>
+</div>
+<span id="result-count" role="status">8 inspirações</span>
+</div>
+<div class="product-grid">
+<article class="product-card" data-category="Clássicos">
+<button type="button" class="product-image" data-product="0" aria-label="Explorar Chocolat Tudo">
+<img src="img/img_0c144fb5c620.jpg" alt="Chocolat Tudo — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Clássicos</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="0">Chocolat Tudo</button>
+</h3>
+<p>Massa chiffon de cacau com cobertura de brigadeiro tradicional.</p>
+</article>
+<article class="product-card" data-category="Clássicos">
+<button type="button" class="product-image" data-product="1" aria-label="Explorar Cenourão">
+<img src="img/img_ad35d457aafd.jpg" alt="Cenourão — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Clássicos</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="1">Cenourão</button>
+</h3>
+<p>Massa de cenoura com cobertura de brigadeiro tradicional.</p>
+</article>
+<article class="product-card" data-category="Celebrações">
+<button type="button" class="product-image" data-product="2" aria-label="Explorar Borboletas ao Vento">
+<img src="img/img_084fb790d45e.jpg" alt="Borboletas ao Vento — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Celebrações</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="2">Borboletas ao Vento</button>
+</h3>
+<p>Uma decoração delicada, com borboletas em azul.</p>
+</article>
+<article class="product-card" data-category="Celebrações">
+<button type="button" class="product-image" data-product="3" aria-label="Explorar Rosas do Encanto">
+<img src="img/img_0d068a901283.jpg" alt="Rosas do Encanto — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Celebrações</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="3">Rosas do Encanto</button>
+</h3>
+<p>Rosas em tons de rosa para uma mesa de festa.</p>
+</article>
+<article class="product-card" data-category="Celebrações">
+<button type="button" class="product-image" data-product="4" aria-label="Explorar Flores de Ouro">
+<img src="img/img_6900d8df8b2d.jpg" alt="Flores de Ouro — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Celebrações</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="4">Flores de Ouro</button>
+</h3>
+<p>Flores delicadas e detalhes em dourado.</p>
+</article>
+<article class="product-card" data-category="Celebrações">
+<button type="button" class="product-image" data-product="5" aria-label="Explorar Corações Doces">
+<img src="img/img_ed31041790af.jpg" alt="Corações Doces — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Celebrações</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="5">Corações Doces</button>
+</h3>
+<p>Um bolo decorado com pequenos corações.</p>
+</article>
+<article class="product-card" data-category="Personalizados">
+<button type="button" class="product-image" data-product="6" aria-label="Explorar Diva do Sabor">
+<img src="img/img_16b8dc39c2d3.jpg" alt="Diva do Sabor — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Personalizados</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="6">Diva do Sabor</button>
+</h3>
+<p>Uma mensagem com personalidade, à sua maneira.</p>
+</article>
+<article class="product-card" data-category="Personalizados">
+<button type="button" class="product-image" data-product="7" aria-label="Explorar Novo Ciclo">
+<img src="img/img_46dbf31ef950.jpg" alt="Novo Ciclo — fotografia do catálogo existente" loading="lazy">
+</button>
+<div class="product-meta">
+<span>Personalizados</span>
+<span>À SUA MEDIDA</span>
+</div>
+<h3>
+<button type="button" data-product="7">Novo Ciclo</button>
+</h3>
+<p>Tons de rosa e uma mensagem para celebrar.</p>
+</article>
+</div>
+<p class="fine catalog-note">Fotografias do catálogo existente. Modelos apresentados como inspiração; sabores, decoração, preços e disponibilidade a confirmar. Safari Divertido e Sonho Conquistado também constam do catálogo original; fotografias com nomes pessoais ficam fora desta seleção de revisão.</p>
+</section>
+<section id="personalizar" class="custom-section section">
+<div>
+<p class="eyebrow">ATELIER DE IDEIAS · DEMO</p>
+<h2>Como seria<br> o seu bolo?</h2>
+<p>Um primeiro esboço para a sua próxima celebração. Escolha uma combinação e veja o resumo.</p>
+<p class="fine">Opções ilustrativas, sujeitas a confirmação. Sem preços, reserva, envio ou recolha de contactos.</p>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 20h16M5 20v-8h14v8M4 12c2 3 4-3 6 0s4-3 6 0 4-3 4 0M8 8h8M12 8V4m0 0c-3-2 0-4 0-4s3 2 0 4"/>
+</svg>
+</div>
+<form id="custom-form">
+<label for="cake-model">Inspiração</label>
+<select id="cake-model" name="modelo">
+<option>Chocolat Tudo</option>
+<option>Cenourão</option>
+<option>Borboletas ao Vento</option>
+<option>Rosas do Encanto</option>
+<option>Flores de Ouro</option>
+<option>Corações Doces</option>
+<option>Diva do Sabor</option>
+<option>Novo Ciclo</option>
+<option>Bolo totalmente personalizado</option>
+</select>
+<label for="cake-size">Tamanho de referência</label>
+<select id="cake-size" name="tamanho">
+<option>Pequeno</option>
+<option>Médio</option>
+<option>Grande</option>
+<option>Bento Cake</option>
+</select>
+<div class="form-row">
+<div>
+<label for="cake-flavour">Massa</label>
+<select id="cake-flavour" name="massa">
+<option>Chocolate</option>
+<option>Baunilha</option>
+<option>Cenoura</option>
+<option>Amendoim</option>
+<option>Café</option>
+<option>Canela</option>
+<option>Laranja</option>
+<option>Leite creme</option>
+<option>Limão</option>
+<option>Red velvet</option>
+</select>
+</div>
+<div>
+<label for="cake-filling">Recheio</label>
+<select id="cake-filling" name="recheio">
+<option>Brigadeiro tradicional</option>
+<option>Brigadeiro branco</option>
+<option>Brigadeiro de limão</option>
+<option>Brigadeiro de pistácio</option>
+<option>Creamcheese</option>
+<option>Doce de leite</option>
+<option>Ganache</option>
+</select>
+</div>
+</div>
+<fieldset>
+<legend>Estilo de decoração</legend>
+<div class="radio-row">
+<label>
+<input type="radio" name="estilo" value="Delicado" checked> Delicado</label>
+<label>
+<input type="radio" name="estilo" value="Festivo" > Festivo</label>
+<label>
+<input type="radio" name="estilo" value="Minimalista" > Minimalista</label>
+</div>
+</fieldset>
+<button class="button" type="submit">Ver a minha combinação <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</button>
+<output id="custom-summary" aria-live="polite">A sua ideia aparecerá aqui. Esta demonstração não cria uma encomenda.</output>
+</form>
+</section>
+</main>
+<footer>
+<div class="footer-top">
+<div>
+<p class="eyebrow">DELÍCIAS DA JADE · ALMADA</p>
+<h2>Há sempre um motivo<br> para celebrar.</h2>
+</div>
+<a class="button pale" href="catalogo.html">Encontre a sua inspiração<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Delícias da Jade · Sabor que encanta</span>
+<nav aria-label="Navegação de rodapé">
+<a href="catalogo.html">Catálogo</a>
+<a href="avaliacoes.html">Avaliações</a>
+<a href="localizacao.html">Localização</a>
+</nav>
+<span>Design draft · Apenas demonstração</span>
+</div>
+</footer>
+<dialog id="product-dialog" class="product-dialog" aria-labelledby="product-title">
+<button class="icon-button close-product" aria-label="Fechar detalhe">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 6 12 12M6 18 18 6"/>
+</svg>
+</button>
+<img id="product-photo" alt="">
+<div class="detail-copy">
+<p class="eyebrow">DO CATÁLOGO DA JADE</p>
+<h2 id="product-title">
+</h2>
+<p id="product-description">
+</p>
+<p class="fine">Fotografia de referência. Personalização, ingredientes, alergénios, preço e disponibilidade carecem de confirmação.</p>
+<button class="button choose-product">Personalizar na demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</button>
+<p class="fine">Sem encomenda ou pagamento real.</p>
+</div>
+</dialog>
+<dialog id="chat-dialog" class="chat-dialog" aria-labelledby="chat-title">
+<div class="chat-head">
+<div>
+<p class="eyebrow">ASSISTENTE DO PROTÓTIPO</p>
+<h2 id="chat-title">Uma ajuda doce.</h2>
+</div>
+<button class="icon-button close-chat" aria-label="Fechar assistente">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 6 12 12M6 18 18 6"/>
+</svg>
+</button>
+</div>
+<p class="chat-disclosure">Demo com respostas pré-definidas. Sem IA real, envio de mensagens ou ligação à Jade. Não introduza dados pessoais.</p>
+<div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
+<p class="bot">Olá! Posso ajudar a explorar os bolos e explicar este protótipo. O que gostaria de saber?</p>
+</div>
+<div class="chat-suggestions">
+<button type="button" data-question="Que sabores há?">Que sabores há?</button>
+<button type="button" data-question="Como personalizar?">Como personalizar?</button>
+<button type="button" data-question="Onde fica?">Onde fica?</button>
+<button type="button" data-question="E os alergénios?">E os alergénios?</button>
+</div>
+<form id="chat-form">
+<label for="chat-input" class="sr-only">Pergunta de demonstração</label>
+<input id="chat-input" maxlength="240" placeholder="Escreva uma pergunta…" autocomplete="off" required>
+<button class="icon-button" aria-label="Ver resposta de demonstração">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</button>
+</form>
+</dialog>
+<noscript>
+<p class="noscript">O catálogo e a navegação funcionam sem JavaScript. Ative JavaScript para filtros e demonstrações locais.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#794040">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Avaliações — Delícias da Jade · Protótipo</title>
+<meta name="description" content="Rascunho de design das Delícias da Jade. Bolos artesanais em Almada, numa demonstração sem encomendas reais.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="assets/app.js">
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar para o conteúdo</a>
+<div class="draft-bar">PROTÓTIPO PARA REVISÃO <span>·</span> Shelton &amp; Jade <span class="draft-extra">— sem encomendas ou pagamentos reais</span>
+</div>
+<header class="site-header">
+<a href="index.html" class="brand" aria-label="Delícias da Jade — início">
+<img src="assets/jade-logo-transparent.png" width="76" height="76" alt="Logótipo Delícias da Jade, com ilustração da chef">
+<span>Delícias da Jade<small>SABOR QUE ENCANTA</small>
+</span>
+</a>
+<button class="menu-toggle icon-button" aria-label="Abrir menu" aria-controls="main-nav" aria-expanded="false">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 7h16M4 12h16M4 17h16"/>
+</svg>
+</button>
+<nav id="main-nav" aria-label="Navegação principal">
+<a href="index.html" >Início</a>
+<a href="catalogo.html" >Os nossos bolos</a>
+<a href="avaliacoes.html" aria-current="page">Avaliações</a>
+<a href="localizacao.html" >Onde estamos</a>
+<a href="catalogo.html#personalizar" class="nav-cta">Imaginar o meu bolo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</nav>
+</header>
+<button class="chat-launch" aria-controls="chat-dialog" aria-expanded="false">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M20 11a8 8 0 0 1-8 8H5l-3 3V11a9 9 0 0 1 18 0Z"/>
+<path d="M7 10h8m-8 4h5"/>
+</svg>
+<span>Uma ajuda doce?</span>
+<small>DEMO</small>
+</button>
+<main id="main">
+<section class="page-intro">
+<p class="eyebrow">AVALIAÇÕES · UM ESPAÇO DE PARTILHA</p>
+<h1>À mesa, ficam<br> <em>as boas memórias.</em>
+</h1>
+<p>Um espaço pensado para as histórias de quem celebra<br> com as Delícias da Jade.</p>
+</section>
+<section class="review-layout section">
+<div class="review-editorial">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 20S2 14 2 7a5 5 0 0 1 10-1A5 5 0 0 1 22 7c0 7-10 13-10 13Z"/>
+</svg>
+<h2>As palavras certas<br> merecem cuidado.</h2>
+<p>As opiniões do site anterior estão a aguardar validação da Jade e confirmação de autorização para publicação.</p>
+<p>Por isso, este rascunho não apresenta testemunhos, classificações ou nomes de clientes.</p>
+<span class="small-label">CONTEÚDO EM REVISÃO</span>
+</div>
+<form id="review-form" class="review-form">
+<p class="eyebrow">EXPERIMENTE A INTERAÇÃO · DEMO</p>
+<h2>Como foi a experiência?</h2>
+<p class="fine">Use apenas um comentário fictício, sem dados pessoais. A pré-visualização desaparece ao atualizar a página.</p>
+<fieldset>
+<legend>Avaliação de demonstração</legend>
+<div class="rating-row">
+<label>
+<input type="radio" name="rating" value="1" >
+<span>1</span>
+</label>
+<label>
+<input type="radio" name="rating" value="2" >
+<span>2</span>
+</label>
+<label>
+<input type="radio" name="rating" value="3" >
+<span>3</span>
+</label>
+<label>
+<input type="radio" name="rating" value="4" >
+<span>4</span>
+</label>
+<label>
+<input type="radio" name="rating" value="5" checked>
+<span>5</span>
+</label>
+</div>
+</fieldset>
+<label for="review-text">Comentário fictício</label>
+<textarea id="review-text" maxlength="350" rows="4" required placeholder="Experimente escrever um comentário de teste…">
+</textarea>
+<button class="button" type="submit">Pré-visualizar comentário <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</button>
+<p class="fine">Nada é enviado, publicado ou guardado.</p>
+<output id="review-preview" aria-live="polite"></output>
+</form>
+</section>
+<section class="steps section">
+<div>
+<p class="eyebrow">DA IDEIA À CELEBRAÇÃO</p>
+<h2>O seu bolo começa<br> com uma ideia.</h2>
+<p class="muted">Explore o percurso de personalização.<br> Neste protótipo, tudo fica no seu ecrã.</p>
+</div>
+<ol>
+<li>
+<span>01</span>
+<div>
+<h3>Encontre a inspiração</h3>
+<p>Um clássico, um tema ou um detalhe que seja seu.</p>
+</div>
+</li>
+<li>
+<span>02</span>
+<div>
+<h3>Dê-lhe o seu toque</h3>
+<p>Experimente sabores e decorações na demonstração.</p>
+</div>
+</li>
+<li>
+<span>03</span>
+<div>
+<h3>Imagine a celebração</h3>
+<p>Reveja a ideia. Disponibilidade e orçamento ficam por confirmar com a Jade.</p>
+</div>
+</li>
+</ol>
+</section>
+</main>
+<footer>
+<div class="footer-top">
+<div>
+<p class="eyebrow">DELÍCIAS DA JADE · ALMADA</p>
+<h2>Há sempre um motivo<br> para celebrar.</h2>
+</div>
+<a class="button pale" href="catalogo.html">Encontre a sua inspiração<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Delícias da Jade · Sabor que encanta</span>
+<nav aria-label="Navegação de rodapé">
+<a href="catalogo.html">Catálogo</a>
+<a href="avaliacoes.html">Avaliações</a>
+<a href="localizacao.html">Localização</a>
+</nav>
+<span>Design draft · Apenas demonstração</span>
+</div>
+</footer>
+<dialog id="product-dialog" class="product-dialog" aria-labelledby="product-title">
+<button class="icon-button close-product" aria-label="Fechar detalhe">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 6 12 12M6 18 18 6"/>
+</svg>
+</button>
+<img id="product-photo" alt="">
+<div class="detail-copy">
+<p class="eyebrow">DO CATÁLOGO DA JADE</p>
+<h2 id="product-title">
+</h2>
+<p id="product-description">
+</p>
+<p class="fine">Fotografia de referência. Personalização, ingredientes, alergénios, preço e disponibilidade carecem de confirmação.</p>
+<button class="button choose-product">Personalizar na demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</button>
+<p class="fine">Sem encomenda ou pagamento real.</p>
+</div>
+</dialog>
+<dialog id="chat-dialog" class="chat-dialog" aria-labelledby="chat-title">
+<div class="chat-head">
+<div>
+<p class="eyebrow">ASSISTENTE DO PROTÓTIPO</p>
+<h2 id="chat-title">Uma ajuda doce.</h2>
+</div>
+<button class="icon-button close-chat" aria-label="Fechar assistente">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 6 12 12M6 18 18 6"/>
+</svg>
+</button>
+</div>
+<p class="chat-disclosure">Demo com respostas pré-definidas. Sem IA real, envio de mensagens ou ligação à Jade. Não introduza dados pessoais.</p>
+<div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
+<p class="bot">Olá! Posso ajudar a explorar os bolos e explicar este protótipo. O que gostaria de saber?</p>
+</div>
+<div class="chat-suggestions">
+<button type="button" data-question="Que sabores há?">Que sabores há?</button>
+<button type="button" data-question="Como personalizar?">Como personalizar?</button>
+<button type="button" data-question="Onde fica?">Onde fica?</button>
+<button type="button" data-question="E os alergénios?">E os alergénios?</button>
+</div>
+<form id="chat-form">
+<label for="chat-input" class="sr-only">Pergunta de demonstração</label>
+<input id="chat-input" maxlength="240" placeholder="Escreva uma pergunta…" autocomplete="off" required>
+<button class="icon-button" aria-label="Ver resposta de demonstração">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h15m-6-6 6 6-6 6"/>
+</svg>
+</button>
+</form>
+</dialog>
+<noscript>
+<p class="noscript">O catálogo e a navegação funcionam sem JavaScript. Ative JavaScript para filtros e demonstrações locais.</p>
+</noscript>
+</body>
+</html>
